@@ -1,10 +1,10 @@
-# 🚀 Git Workflow - SAFeR
+# Git Workflow - SAFeR
 
 Guia completo de fluxo de branches e comandos Git para o projeto **SAFeR**, seguindo boas práticas de desenvolvimento.
 
 ---
 
-## 🌳 Estrutura de Branches
+## Estrutura de Branches
 
 | Branch | Descrição |
 |--------|-----------|
@@ -18,17 +18,33 @@ Guia completo de fluxo de branches e comandos Git para o projeto **SAFeR**, segu
 
 ## 📊 Diagrama do Fluxo de Branches (Visual)
 
-      🌟 main
-       │
-       │ 🔀 Merge Release
-       ▼
-     🏷 release/1.0
-       ▲
-       │
-   🔧 develop
-    ├─────────────┐
-    │             │
+         🌟 main
+           ▲
+           │
+        🔀 Merge Release
+           │
+       🏷 release/1.0
+           ▲
+           │
+        🔧 develop
+       ┌───────────────────────┐
+       │                       │
+       ✨feature/login        ✨feature/pagamento
+       │                       │
+       └───────▲───────────────┘
+               │
+          🔀 Merge Feature
+          
+main: branch estável, pronta para produção.
 
+release/x.x: prepara a versão final antes de enviar para main.
+
+develop: branch de desenvolvimento contínuo, integra features antes do release.
+
+feature/nome: novas funcionalidades que são desenvolvidas isoladamente e depois integradas (merge) em develop.
+
+Os ícones ajudam a identificar o propósito de cada branch.
+          
 **Legenda:**
 - 🔀 = merge  
 - 🆕 = novas funcionalidades  
